@@ -47,7 +47,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.beanutils.BeanUtilsBean;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import fr.paris.lutece.portal.service.util.AppLogService;
 import fr.paris.lutece.portal.web.constants.Parameters;
@@ -710,7 +710,7 @@ public class DataTableManager<T> implements Serializable
         }
         catch( Exception e )
         {
-            AppLogService.debug( e );
+            AppLogService.debug( e.getMessage(), e );
         }
 
         return method;

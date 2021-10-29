@@ -68,7 +68,7 @@ import fr.paris.lutece.util.string.StringUtil;
 import fr.paris.lutece.util.url.UrlItem;
 import java.io.IOException;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import java.io.Serializable;
 import java.util.Collection;
@@ -445,7 +445,7 @@ public class AdminLoginJspBean implements Serializable
         }
         catch( LoginException ex )
         {
-            AppLogService.error( "Error during connection for user access code :" + SecurityUtil.logForgingProtect( strAccessCode ), ex );
+            AppLogService.error( "Error during connection for user access code :{}", SecurityUtil.logForgingProtect( strAccessCode ), ex );
 
             return AdminMessageService.getMessageUrl( request, Messages.MESSAGE_AUTH_FAILURE, strLoginUrl, AdminMessage.TYPE_STOP );
         }

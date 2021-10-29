@@ -42,7 +42,7 @@ import javax.security.auth.login.LoginException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import fr.paris.lutece.portal.business.user.AdminUser;
 import fr.paris.lutece.portal.business.user.AdminUserHome;
@@ -89,7 +89,7 @@ public final class AdminAuthenticationService
     public static synchronized void init( )
     {
         _authentication = SpringContextService.getBean( BEAN_ADMIN_AUTHENTICATION_MODULE );
-        AppLogService.info( "Authentication module loaded : " + _authentication.getAuthServiceName( ) );
+        AppLogService.info( "Authentication module loaded : {}", _authentication.getAuthServiceName( ) );
 
         if ( _authentication.getClass( ).equals( LuteceDefaultAdminAuthentication.class ) )
         {

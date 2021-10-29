@@ -43,7 +43,7 @@ import java.util.Locale;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.collections.CollectionUtils;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.lucene.document.DateTools;
 import org.apache.lucene.document.DateTools.Resolution;
@@ -313,7 +313,7 @@ public class LuceneSearchEngine implements SearchEngine
             catch ( ParseException e )
             {
                 AppLogService
-                        .error( "Bad Date Format for indexed item \"" + item.getTitle( ) + "\" : " + e.getMessage( ) );
+                        .error( "Bad Date Format for indexed item \"{}\" : {}",  item.getTitle( ), e.getMessage( ), e );
             }
 
             result.setUrl( item.getUrl( ) );

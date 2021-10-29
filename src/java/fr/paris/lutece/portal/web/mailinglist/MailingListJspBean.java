@@ -42,7 +42,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import fr.paris.lutece.portal.business.mailinglist.MailingList;
 import fr.paris.lutece.portal.business.mailinglist.MailingListFilter;
@@ -263,7 +263,7 @@ public class MailingListJspBean extends AdminFeaturesPageJspBean
 
         if ( !StringUtils.isNumeric( strMailingListId ) )
         {
-            AppLogService.error( SecurityUtil.logForgingProtect( strMailingListId ) + " is not a valid mailing list id." );
+            AppLogService.error(  " {} is not a valid mailing list id.", ()-> SecurityUtil.logForgingProtect( strMailingListId ) );
 
             return getManageMailinglists( request );
         }
@@ -273,7 +273,7 @@ public class MailingListJspBean extends AdminFeaturesPageJspBean
 
         if ( mailinglist == null )
         {
-            AppLogService.error( SecurityUtil.logForgingProtect( strMailingListId ) + " is not a valid mailing list id." );
+            AppLogService.error( "{} is not a valid mailing list id.", ()-> SecurityUtil.logForgingProtect( strMailingListId ));
 
             return getManageMailinglists( request );
         }

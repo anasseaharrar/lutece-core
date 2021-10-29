@@ -39,7 +39,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import fr.paris.lutece.portal.business.dashboard.AdminDashboardFactory;
 import fr.paris.lutece.portal.business.dashboard.AdminDashboardHome;
@@ -179,7 +179,7 @@ public class AdminDashboardJspBean extends AdminFeaturesPageJspBean
         }
         catch( NumberFormatException nfe )
         {
-            AppLogService.error( "AdminDashboardJspBean.doReorderColumn : " + nfe.getMessage( ), nfe );
+            AppLogService.error( "AdminDashboardJspBean.doReorderColumn : {}", nfe.getMessage( ), nfe );
 
             return AdminMessageService.getMessageUrl( request, Messages.MANDATORY_FIELDS, AdminMessage.TYPE_STOP );
         }

@@ -64,7 +64,7 @@ import fr.paris.lutece.portal.web.constants.Parameters;
 import fr.paris.lutece.util.html.HtmlTemplate;
 import fr.paris.lutece.util.url.UrlItem;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.BooleanUtils;
 
 import java.io.UnsupportedEncodingException;
@@ -353,7 +353,7 @@ public class PortalJspBean
         }
         else
         {
-            AppLogService.error( "Error 500 : " + exception.getMessage( ), exception );
+            AppLogService.error( "Error 500 : {}", exception.getMessage( ), exception );
         }
 
         String strCause = null;
@@ -431,7 +431,7 @@ public class PortalJspBean
             }
             catch( UnsupportedEncodingException ex )
             {
-                AppLogService.error( "Redirection error while encoding URL : " + ex.getMessage( ), ex );
+                AppLogService.error( "Redirection error while encoding URL : {}", ex.getMessage( ), ex );
             }
         }
 

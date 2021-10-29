@@ -44,7 +44,7 @@ import fr.paris.lutece.portal.service.util.AppLogService;
 import fr.paris.lutece.portal.web.admin.AdminPageJspBean;
 import fr.paris.lutece.util.html.HtmlTemplate;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.HashMap;
 
@@ -143,7 +143,7 @@ public class DaemonsJspBean extends AdminPageJspBean
                 AppDaemonService.modifyDaemonInterval( strDaemonKey, strDaemonInterval );
                 break;
             default:
-                AppLogService.error( "Unknown daemon action : " + strAction );
+                AppLogService.error( "Unknown daemon action : {}", strAction );
         }
 
         return getHomeUrl( request );
